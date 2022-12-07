@@ -75,6 +75,7 @@ px = {'Hypoxia':[hypoxia],
       'Age':[agemo]}
 
 if st.button("Z skorunu Analiz Et"): 
+
     pxdf = pd.DataFrame(px)
 
     result = loaded_model.predict(pxdf).tolist()
@@ -97,5 +98,7 @@ if st.button("Z skorunu Analiz Et"):
                         "Complaint period":"Başvuru süresi",
                         "Age":"Yaş",
                         "result":"Tahmin"  }, inplace=True)
+
+    st.dataframe(data=pxdf)
 
 
