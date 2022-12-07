@@ -22,7 +22,7 @@ olduğundan bahsetmek gerekir
 
 filename = "./model/cart_model.sav"
 
-loaded_model = pickle.load(filename)
+loaded_model = pickle.load(open(filename, 'rb'))
 
 pxid = st.number_input("Dosya No;", step = False)
 
