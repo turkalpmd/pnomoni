@@ -3,3 +3,4 @@ pandas==1.5.1
 Pillow==9.3.0
 streamlit==1.15.0
 pickle5 == 0.0.12
+scikit-learn == 1.1.3
