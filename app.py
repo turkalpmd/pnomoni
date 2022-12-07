@@ -74,28 +74,28 @@ px = {'Hypoxia':[hypoxia],
       'Complaint period':[complaint], 
       'Age':[agemo]}
 
+if st.button("Z skorunu Analiz Et"): 
+    pxdf = pd.DataFrame(px)
 
-pxdf = pd.DataFrame(px)
+    result = loaded_model.predict(pxdf).tolist()
+    result = result[0]
 
-result = loaded_model.predict(pxdf).tolist()
-result = result[0]
+    pxdf["Dosya No"] = pxid
+    pxdf["Hasta Cinsiyeti"] = pxgender
 
-pxdf["Dosya No"] = pxid
-pxdf["Hasta Cinsiyeti"] = pxgender
-
-if result == 0:
-    result = "Kritik bakım ihtiyacı beklenmiyor"
-else:
-    result = "Kritik bakım ihtiyacı oalbilir"
+    if result == 0:
+        result = "Kritik bakım ihtiyacı beklenmiyor"
+    else:
+        result = "Kritik bakım ihtiyacı oalbilir"
 
 
 
-pxdf["result"] = result
-pxdf.rename(columns={"Hypoxia":"Hipoksi",
-                     "Respiratory distress":"Sol. yetm.",
-                     "Fever":"Ateş",
-                     "Complaint period":"Başvuru süresi",
-                     "Age":"Yaş",
-                     "result":"Tahmin"  }, inplace=True)
+    pxdf["result"] = result
+    pxdf.rename(columns={"Hypoxia":"Hipoksi",
+                        "Respiratory distress":"Sol. yetm.",
+                        "Fever":"Ateş",
+                        "Complaint period":"Başvuru süresi",
+                        "Age":"Yaş",
+                        "result":"Tahmin"  }, inplace=True)
 
 
