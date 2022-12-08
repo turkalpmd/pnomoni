@@ -5,7 +5,7 @@ from PIL import Image
 import streamlit as st
 
 PAGE_TITLE = "Pnömoni | AI_MED"
-PAGE_ICON = ":lungs:" # https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
+PAGE_ICON = ":white_check_mark:" # https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
@@ -74,7 +74,7 @@ px = {'Hypoxia':[hypoxia],
       'Complaint period':[complaint], 
       'Age':[agemo]}
 
-if st.button("Z skorunu Analiz Et"): 
+if st.button("Kiritik bakım ihtiyacını kontrol et"): 
 
     pxdf = pd.DataFrame(px)
 
